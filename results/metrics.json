@@ -1,0 +1,56 @@
+{
+  "rows": 7043,
+  "churn_rate": 0.2654,
+  "test_rows": 1409,
+  "cv_roc_auc": {
+    "Majority class (baseline)": {
+      "mean": 0.5,
+      "std": 0.0
+    },
+    "Logistic regression": {
+      "mean": 0.8472,
+      "std": 0.0109
+    },
+    "Random forest": {
+      "mean": 0.8474,
+      "std": 0.0107
+    },
+    "Gradient boosting": {
+      "mean": 0.8411,
+      "std": 0.008
+    }
+  },
+  "best_model": "Random forest",
+  "test_scores_at_0.5": {
+    "roc_auc": 0.8449,
+    "pr_auc": 0.6561,
+    "precision": 0.5318,
+    "recall": 0.7834,
+    "f1": 0.6335
+  },
+  "top_decile_lift": 2.86,
+  "top_3_deciles_share_of_churners": 0.6658,
+  "campaign": {
+    "assumptions": {
+      "customer_value_usd": 769.07,
+      "offer_cost_usd": 50.0,
+      "save_rate": 0.3
+    },
+    "best_threshold": 0.42,
+    "customers_targeted": 636,
+    "net_value_usd": 41338.2,
+    "net_value_if_everyone_targeted_usd": 15839.24
+  },
+  "churn_rate_by_contract": {
+    "Month-to-month": 0.4271,
+    "One year": 0.1127,
+    "Two year": 0.0283
+  },
+  "churn_rate_by_tenure_band": {
+    "0-6m": 0.5294,
+    "13-24m": 0.2871,
+    "25-48m": 0.2039,
+    "49-72m": 0.0951,
+    "7-12m": 0.3589
+  }
+}
