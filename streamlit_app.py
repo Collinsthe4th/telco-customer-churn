@@ -20,7 +20,10 @@ sys.path.insert(0, str(ROOT / "src"))
 from telco_churn.data import ADD_ONS, CATEGORICAL, NUMERIC, TARGET, clean, load  # noqa: E402
 from telco_churn.models import best_threshold, campaign_value, candidate_models, lift_table  # noqa: E402
 
-st.set_page_config(page_title="Telco Churn", page_icon="📞", layout="wide")
+st.set_page_config(page_title="Telco Customer Churn", layout="wide")
+
+HEADER = "https://images.unsplash.com/photo-1741099915777-0011cf9fd4d7?auto=format&fit=crop&w=1600&h=340&q=80"
+st.image(HEADER, use_container_width=True)
 
 
 @st.cache_resource
@@ -37,8 +40,8 @@ def train():
 
 model, df, X_te, y_te, proba = train()
 
-st.title("📞 Telco Customer Churn")
-st.caption("7,043 customers of a telecom provider, 26.5% of whom cancelled. Model: logistic regression, tested on 1,409 held-out customers.")
+st.title("Telco Customer Churn")
+st.caption("I trained a churn model on 7,043 customers of a telecom provider, 26.5% of whom cancelled. The app uses the logistic regression, tested on 1,409 customers it had not seen.")
 
 tab1, tab2, tab3 = st.tabs(["Score a customer", "Plan a retention campaign", "What drives churn"])
 
@@ -117,4 +120,4 @@ with tab3:
     st.write("Actual churn rate by predicted risk decile (1 = highest risk)")
     st.bar_chart(lt["churn_rate"].mul(100).rename("Churn rate (%)"))
 
-st.markdown("[Source code and README](https://github.com/Collinsthe4th/telco-customer-churn)")
+st.markdown("[Source code and README](https://github.com/Collinsthe4th/telco-customer-churn) · Header photo from Unsplash.")
